@@ -25,6 +25,14 @@ declare type LoginUser = {
   password: string;
 };
 
+declare type CustomInput = {
+  control: any;
+  name: string;
+  label: string;
+  placeholder: string;
+
+}
+
 declare type User = {
   $id: string;
   email: string;

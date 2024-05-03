@@ -193,3 +193,19 @@ export const getTransactionStatus = (date: Date) => {
 
   return date > twoDaysAgo ? "Processing" : "Success";
 };
+import {z} from 'zod'
+
+export const formSchema = (type: string) => z.object({
+  // sign up
+  firstName: type === 'signin' ? z.string().optional() : z.string().min(3),
+  lastName: type === 'signin' ? z.string().optional() : z.string().min(3),
+  address1: type === 'signin' ? z.string().optional() : z.string().max(50),
+  city: type === 'signin' ? z.string().optional() : z.string().max(50),
+  state: type === 'signin' ? z.string().optional() : z.string().min(2).max(2),
+  postalCode: type === 'signin' ? z.string().optional() : z.string().min(3).max(6),
+  dateOfBirth: type === 'signin' ? z.string().optional() : z.string().min(3),
+  ssn: type === 'signin' ? z.string().optional() : z.string().min(3),
+  // both
+  email: z.string().email(),
+  password: z.string().min(8),
+})
