@@ -9,7 +9,7 @@ const HomePage = () => {
     totalBalance : 278.89,
   }
   return (
-   <section className='home'>
+   <section className='home '>
     <div className='home-content'>
     <header className='home-header'>
     <Header 
